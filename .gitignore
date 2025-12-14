@@ -1,1 +1,3 @@
 nimble stark pigeon-react
+*.old
+.DS_Store
