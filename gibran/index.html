@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahlil Gibran Reading Group | San Francisco</title>
+    <link rel="shortcut icon" href="/images/d.ico">
+    <link rel="stylesheet" href="/static/css/main.84f0df28.css">
+    <style>
+        .gibran-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--color-surface) 0%, color-mix(in srgb, var(--color-primary) 5%, var(--color-surface)) 100%);
+        }
+
+        .gibran-container {
+            max-width: 62rem;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .gibran-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .gibran-title {
+            font-family: 'STIX Two Text', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--color-on-surface);
+            margin-bottom: 1rem;
+        }
+
+        .gibran-subtitle {
+            font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+            color: var(--color-primary);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .gibran-intro {
+            font-size: clamp(1rem, 1.1vw, 1.125rem);
+            line-height: 1.8;
+            color: var(--color-on-surface-secondary);
+            max-width: 720px;
+            margin: 0 auto 3rem;
+        }
+
+        .reading-group-section {
+            background: var(--color-surface-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            font-family: 'STIX Two Text', serif;
+            font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+            font-weight: 600;
+            color: var(--color-on-surface);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        .reading-group-content {
+            font-size: clamp(1rem, 1.1vw, 1.0625rem);
+            line-height: 1.8;
+            color: var(--color-on-surface-secondary);
+        }
+
+        .reading-group-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .reading-group-content strong {
+            color: var(--color-on-surface);
+            font-weight: 600;
+        }
+
+        .reading-group-details {
+            background: var(--color-surface);
+            border-left: 4px solid var(--color-primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .reading-group-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reading-group-details li {
+            padding: 0.5rem 0;
+            color: var(--color-on-surface-secondary);
+        }
+
+        .reading-group-details li strong {
+            color: var(--color-primary);
+            display: inline-block;
+            min-width: 180px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--color-primary);
+            color: var(--color-on-primary);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius-control);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .contact-button:hover {
+            background-color: color-mix(in oklab, var(--color-primary) 90%, var(--color-surface));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .curriculum-section {
+            margin-bottom: 3rem;
+        }
+
+        .week-card {
+            background: var(--color-surface-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-md);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .week-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .week-title {
+            font-family: 'STIX Two Text', serif;
+            font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .week-content {
+            color: var(--color-on-surface-secondary);
+            line-height: 1.7;
+        }
+
+        .reading-type {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-on-surface);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .reading-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.5rem 0;
+        }
+
+        .reading-list li {
+            padding: 0.25rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .reading-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        .discussion-questions {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .discussion-questions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .discussion-questions li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-style: italic;
+            color: var(--color-on-surface-secondary);
+        }
+
+        .discussion-questions li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        .resources-section {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-md);
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .resources-section h3 {
+            font-family: 'STIX Two Text', serif;
+            font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+            font-weight: 600;
+            color: var(--color-on-surface);
+            margin-bottom: 1rem;
+        }
+
+        .resources-section a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .resources-section a:hover {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-on-surface-secondary);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            margin-bottom: 2rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 768px) {
+            .gibran-container {
+                padding: 3rem 1rem;
+            }
+
+            .reading-group-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .week-card {
+                padding: 1.5rem;
+            }
+
+            .reading-group-details li strong {
+                display: block;
+                min-width: auto;
+                margin-bottom: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gibran-page">
+        <div class="gibran-container">
+            <a href="/" class="back-link">
+                ← Back to Home
+            </a>
+
+            <div class="gibran-header">
+                <h1 class="gibran-title">Kahlil Gibran: A 12-Week Guided Reading Journey</h1>
+                <div class="gibran-subtitle">San Francisco Reading Group</div>
+                <p class="gibran-intro">
+                    A contemplative exploration of Kahlil Gibran's major works through weekly readings, in-person discussions, and shared reflection. This journey is designed for personal enrichment and deepened understanding, not academic mastery.
+                </p>
+            </div>
+
+            <div class="reading-group-section">
+                <h2 class="section-title">Join Our Reading Group</h2>
+                <div class="reading-group-content">
+                    <p>
+                        We're forming an intimate reading community in San Francisco to journey through Gibran's transformative works together. Over twelve weeks, we'll read chronologically through his major writings—from the rebellious early stories to the timeless wisdom of <em>The Prophet</em> and the polyphonic beauty of <em>Jesus, The Son of Man</em>.
+                    </p>
+                    <p>
+                        This is not a lecture series or academic seminar. It's a space for slow reading, honest reflection, and genuine conversation about justice, love, exile, spirituality, and what it means to be human.
+                    </p>
+
+                    <div class="reading-group-details">
+                        <ul>
+                            <li><strong>Format:</strong> Weekly in-person meetings in San Francisco + asynchronous group chat</li>
+                            <li><strong>Duration:</strong> 12 weeks, following the curriculum below</li>
+                            <li><strong>Meeting Day/Time:</strong> To be determined based on group availability</li>
+                            <li><strong>Location:</strong> San Francisco (specific location TBD based on group consensus)</li>
+                            <li><strong>Group Chat:</strong> Platform to be decided by the group for weekly reflections and discussion</li>
+                            <li><strong>Reading Load:</strong> Approximately 40-60 pages per week</li>
+                            <li><strong>Commitment:</strong> Show up with curiosity, read slowly, engage authentically</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        The readings are all available for free online or through affordable print editions. We'll read slowly, reread freely, and allow space for silence and dialogue. The discussion questions are starting points, not prescriptions.
+                    </p>
+
+                    <p>
+                        <strong>Interested in joining?</strong> Email me at <a href="mailto:d@ley.bz">d@ley.bz</a> or reach out through whatever channel you heard about the reading group!
+                    </p>
+                </div>
+            </div>
+
+            <div class="curriculum-section">
+                <h2 class="section-title">12-Week Curriculum</h2>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 1 — Roots: Lebanon, Loss, and the Birth of a Voice</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>Spirits Rebellious:</em> "Madja the Daughter of the Poor," "The Cry of the Graves"</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Robin Waterfield, <em>Prophet</em>, Chapters 1–2</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>How does injustice function as a spiritual catalyst?</li>
+                                <li>What early signs of the prophetic voice appear?</li>
+                                <li>Where do compassion and anger intersect?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 2 — Exile, Immigration, and Rebellion</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>Spirits Rebellious:</em> "Khalil the Heretic," "Yuhanna the Mad"</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Waterfield, <em>Prophet</em>, Chapters 3–4</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>When is rebellion morally necessary?</li>
+                                <li>How does exile sharpen identity?</li>
+                                <li>What authority structures are being challenged?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 3 — Love and Constraint</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>The Broken Wings</em> (entire book)</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>Beloved Prophet:</em> Letters dated 1910–1913 (pp. 39–82)</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>Is this a love story or social critique?</li>
+                                <li>How does love awaken suffering?</li>
+                                <li>What is sacrificed in the name of tradition?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 4 — The Mask of the Madman</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>The Madman</em> (entire book)</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Waterfield, <em>Prophet</em>, Chapter 6</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>Why does truth wear masks?</li>
+                                <li>Which parable lingered longest?</li>
+                                <li>How does irony function spiritually?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 5 — The Moral Vision Clarifies</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>The Forerunner</em> (entire book)</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>Beloved Prophet:</em> Letters on art and vocation (pp. 120–150)</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>What values are non-negotiable here?</li>
+                                <li>How does Gibran define freedom?</li>
+                                <li>Where do you sense growing restraint?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 6 — Aphorism, Silence, and Paradox</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>Sand and Foam</em> (entire book)</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Waterfield, <em>Prophet</em>, Chapter 9</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>Which aphorism felt personal?</li>
+                                <li>Why embrace contradiction?</li>
+                                <li>How does silence teach?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 7 — The Prophet Appears (Part I)</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>The Prophet:</em> "The Coming of the Ship" through "Houses"</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Waterfield, <em>Prophet</em>, Chapter 10</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>Why must Almustafa leave to teach?</li>
+                                <li>Which teaching feels most alive today?</li>
+                                <li>How does beauty replace command?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 8 — The Prophet Departs (Part II)</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>The Prophet:</em> "Clothes" through "The Farewell"</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Short critical reflections on <em>The Prophet</em></li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>How is pain redefined?</li>
+                                <li>What vision of death is offered?</li>
+                                <li>Why has this book endured?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 9 — The Many Faces of Christ</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>Jesus, The Son of Man:</em> Preface and first half</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Waterfield, <em>Prophet</em>, Chapter 11</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>Why many voices?</li>
+                                <li>Which testimony felt most human?</li>
+                                <li>How is holiness portrayed?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 10 — Vision Beyond Doctrine</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>Jesus, The Son of Man:</em> second half</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Viewing Gibran's drawings and paintings</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>How do image and word interact?</li>
+                                <li>Why is embodiment central?</li>
+                                <li>What is sacred here?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 11 — Return and Completion</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>The Garden of the Prophet</em> (entire book)</li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Waterfield, <em>Prophet</em>, Chapter 12</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>How has Almustafa changed?</li>
+                                <li>Is wisdom quieter now?</li>
+                                <li>What feels unfinished?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card">
+                    <h3 class="week-title">Week 12 — Legacy and Integration</h3>
+                    <div class="week-content">
+                        <div class="reading-type">Primary Reading:</div>
+                        <ul class="reading-list">
+                            <li><em>Beloved Prophet:</em> Letters from 1928–1931 (pp. 200–220)</li>
+                            <li>Reread: "The Farewell" from <em>The Prophet</em></li>
+                        </ul>
+
+                        <div class="reading-type">Supplementary Reading:</div>
+                        <ul class="reading-list">
+                            <li>Essays on Gibran's reception in the Middle East and West</li>
+                        </ul>
+
+                        <div class="discussion-questions">
+                            <div class="reading-type">Discussion:</div>
+                            <ul>
+                                <li>Why is Gibran both loved and criticized?</li>
+                                <li>What work or idea stays with you?</li>
+                                <li>How might you live what you've read?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resources-section">
+                <h3>How to Access the Readings</h3>
+                <p style="margin-bottom: 1rem; color: var(--color-on-surface-secondary); line-height: 1.7;">
+                    Weekly reading averages 40–60 pages. Read slowly, reread freely, and allow space for silence and dialogue.
+                </p>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <div class="reading-type">Free Online Texts (Public Domain):</div>
+                    <ul class="reading-list">
+                        <li><a href="https://www.gutenberg.org/ebooks/author/129" target="_blank" rel="noopener noreferrer">Project Gutenberg</a></li>
+                        <li><a href="https://archive.org/search.php?query=Kahlil%20Gibran" target="_blank" rel="noopener noreferrer">Internet Archive (scanned editions)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="reading-type">Recommended Print Editions:</div>
+                    <ul class="reading-list">
+                        <li><em>The Essential Kahlil Gibran</em> (Modern Library) — includes most works used in this course</li>
+                        <li>Individual editions of <em>The Prophet</em>, <em>The Broken Wings</em>, <em>Jesus, The Son of Man</em></li>
+                    </ul>
+                    <p style="margin-top: 0.75rem; color: var(--color-on-surface-secondary); font-size: 0.9375rem; line-height: 1.7;">
+                        Available via Amazon or major booksellers by searching the exact titles above.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
