@@ -118,7 +118,7 @@
         .reading-group-details li strong {
             color: var(--color-primary);
             display: inline-block;
-            min-width: 180px;
+            min-width: 140px;
         }
 
         .contact-button {
@@ -297,6 +297,19 @@
                 min-width: auto;
                 margin-bottom: 0.25rem;
             }
+
+            .toc-grid {
+                gap: 0.25rem !important;
+            }
+
+            .toc-row {
+                grid-template-columns: 1fr !important;
+                gap: 0.5rem !important;
+            }
+
+            .toc-row span:first-child {
+                min-width: auto !important;
+            }
         }
     </style>
 </head>
@@ -341,14 +354,66 @@
                         The readings are all available for free online or through affordable print editions. We'll read slowly, reread freely, and allow space for silence and dialogue. The discussion questions are starting points, not prescriptions.
                     </p>
 
-                    <p>
-                        <strong>Interested in joining?</strong> Email me at <a href="mailto:d@ley.bz">d@ley.bz</a> or reach out through whatever channel you heard about the reading group!
-                    </p>
+                    <div style="background: var(--color-surface); border: 2px solid var(--color-primary); border-radius: var(--border-radius-md); padding: 2rem; margin-top: 2rem; text-align: center;">
+                        <p style="font-size: clamp(1.125rem, 1.2vw, 1.25rem); font-weight: 500; margin-bottom: 1rem; color: var(--color-on-surface);">
+                            <strong>Interested in joining?</strong>
+                        </p>
+                        <p style="margin-bottom: 0;">
+                            Email me at <a href="mailto:d@ley.bz?subject=I%20Want%20To%20Read!&body=I%20am%20interested%20in%20joining%20the%20Kahlil%20Gibran%20reading%20group!%20I%20am%20generally%20free%20on%20___%20evenings%20and%20prefer%20to%20communicate%20on%20(%20Messenger%20/%20WhatsApp%20/%20Signal%20)." style="font-weight: 600; font-size: 1.0625rem;">d@ley.bz</a> or reach out through whatever channel you heard about the reading group!
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <div class="curriculum-section">
                 <h2 class="section-title">12-Week Curriculum</h2>
+
+                <div style="background: var(--color-surface-elevated); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 2rem; margin-bottom: 3rem;">
+                    <h3 style="font-family: 'STIX Two Text', serif; font-size: clamp(1.25rem, 1.6vw, 1.5rem); font-weight: 600; color: var(--color-on-surface); margin-bottom: 1.5rem;">Reading List Overview</h3>
+
+                    <div style="display: grid; gap: 0.5rem;">
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                            <span style="color: var(--color-primary); font-weight: 600; min-width: 80px;">Weeks 1–2</span>
+                            <span style="color: var(--color-on-surface-secondary);"><em>Spirits Rebellious</em> (selections)</span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                            <span style="color: var(--color-primary); font-weight: 600; min-width: 80px;">Week 3</span>
+                            <span style="color: var(--color-on-surface-secondary);"><em>The Broken Wings</em></span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                            <span style="color: var(--color-primary); font-weight: 600; min-width: 80px;">Week 4</span>
+                            <span style="color: var(--color-on-surface-secondary);"><em>The Madman</em></span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                            <span style="color: var(--color-primary); font-weight: 600; min-width: 80px;">Week 5</span>
+                            <span style="color: var(--color-on-surface-secondary);"><em>The Forerunner</em></span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                            <span style="color: var(--color-primary); font-weight: 600; min-width: 80px;">Week 6</span>
+                            <span style="color: var(--color-on-surface-secondary);"><em>Sand and Foam</em></span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                            <span style="color: var(--color-primary); font-weight: 600; min-width: 80px;">Weeks 7–8</span>
+                            <span style="color: var(--color-on-surface-secondary);"><em>The Prophet</em></span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                            <span style="color: var(--color-primary); font-weight: 600; min-width: 80px;">Weeks 9–10</span>
+                            <span style="color: var(--color-on-surface-secondary);"><em>Jesus, The Son of Man</em></span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                            <span style="color: var(--color-primary); font-weight: 600; min-width: 80px;">Week 11</span>
+                            <span style="color: var(--color-on-surface-secondary);"><em>The Garden of the Prophet</em></span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 0.5rem 0;">
+                            <span style="color: var(--color-primary); font-weight: 600; min-width: 80px;">Week 12</span>
+                            <span style="color: var(--color-on-surface-secondary);"><em>Beloved Prophet</em> (letters) + Review</span>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 1.5rem; font-size: 0.9375rem; color: var(--color-on-surface-secondary); font-style: italic;">
+                        Plus biographical chapters from Robin Waterfield's <em>Prophet</em> throughout the journey.
+                    </p>
+                </div>
 
                 <div class="week-card">
                     <h3 class="week-title">Week 1 — Roots: Lebanon, Loss, and the Birth of a Voice</h3>
